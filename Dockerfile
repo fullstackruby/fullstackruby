@@ -1,10 +1,13 @@
-FROM octohost/middleman-nginx
+FROM ruby:2.2.2
 
-WORKDIR /srv/www
+RUN gem install middleman
 
-ADD . /srv/www/
-RUN middleman build
+ADD . /home/app/fsr
+WORKDIR /home/app/fsr
+RUN bundle install
 
-EXPOSE 80
+ENV PORT 3000
+EXPOSE 3000
 
-CMD nginx
+CMD middleman build
+CMD middleman server -p PORT
