@@ -1,16 +1,18 @@
-# If you have OpenSSL installed, we recommend updating
-# the following line to use "https"
-source "http://rubygems.org"
+source "https://rubygems.org"
 
-gem "middleman", "~> 3.3.12"
-gem "middleman-blog", "~> 3.5.3"
+group :development do
+  gem 'rake', '~> 10.0'
+  gem 'jekyll', '~> 2.0'
+  gem 'octopress-hooks', '~> 2.2'
+  gem 'octopress-date-format', '~> 2.0'
+  gem 'jekyll-sitemap'
+  gem 'rdiscount', '~> 2.0'
+  gem 'RedCloth', '~> 4.2.9'
+  gem 'haml', '~> 4.0'
+  gem 'compass', '~> 1.0.1'
+  gem 'sass-globbing', '~> 1.0.0'
+  gem 'rb-fsevent', '~> 0.9'
+  gem 'stringex', '~> 1.4.0'
+end
 
-# For feed.xml.builder
-gem "builder", "~> 3.0"
-
-gem "haml"
-
-# Opal and opal-jquery
-gem "opal"
-gem "opal-jquery"
-gem "opal-sprockets"
+gem 'sinatra', '~> 1.4.2'
